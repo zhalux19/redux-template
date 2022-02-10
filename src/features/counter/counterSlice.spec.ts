@@ -1,3 +1,4 @@
+import { ApiStatus } from '../../utilities/enums';
 import counterReducer, {
   CounterState,
   increment,
@@ -9,6 +10,7 @@ describe('counter reducer', () => {
   const initialState: CounterState = {
     value: 3,
     status: 'idle',
+    apiStatus: ApiStatus.Idle
   };
   it('should handle initial state', () => {
     expect(counterReducer(undefined, { type: 'unknown' })).toEqual({
